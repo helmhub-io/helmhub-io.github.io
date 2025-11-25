@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelmHub.IO</title>
+      <link rel="icon" type="image/x-icon" href="/assets/logo/helm-white-fav.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> -->
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <div class="nav-left">
+                    <img src="/assets/logo/helm-white.png" alt="" class="logo">
+                    <a href="/index.html" class="logo">HelmHub.IO</a>
+                    <a href="/about.html" class="nav-link">About</a>
+                    <a href="https://helmhub-io.github.io/charts" class="nav-link">Charts</a>
+                    <a href="/docs.html" class="nav-link">Docs</a>
+                    <a href="/team.html" class="nav-link">Contributors</a>
+                    <a href="/blog.html" class="nav-link">Blog</a>
+                </div>
+                <div class="nav-right">
+                    <button class="theme-toggle" onclick="toggleTheme()">
+                        <i class="fas fa-toggle-on"></i>
+                    </button>
+                    <a href="https://github.com/helmhub/helmhub" class="github-link">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <div class="search-container">
+                        <input type="text" placeholder="Search charts..." class="search-input">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                </div>
+                <button class="hamburger" onclick="toggleMenu()">☰</button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html" >About</a></li>
+                    <li><a href="https://helmhub-io.github.io/charts" >Charts</a></li>
+                    <li><a href="/docs.html" >Docs</a></li>
+                    <li><a href="/team.html" >Contributors</a></li>
+                    <li><a href="/blog.html" >Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <div class="container">
+            <h1>What's Helmhub-IO?</h1>
+            <p class="subtitle">Here's what you need to know about the helmhub-io</p>
+
+            
+        </div>
+    </header>
+
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-wrap">
+                <div class="abh-left">
+                    <h2>First, What's  Helmhub?</h2>
+                        <p>In DevOps and Site Reliability Engineering (SRE) practices, Helm charts are a packaging format used to define, install, 
+                            and manage complex Kubernetes applications consistently and reliably. Often described as the "package manager" 
+                            for Kubernetes (similar to apt or yum in Linux), 
+                            Helm streamlines the deployment and lifecycle management of applications within a Kubernetes cluster. 
+                        </p>
+                        <em>So, simply put, this is where you can get all your helm charts</em>
+                </div>
+                    <div class="abh-right">
+                        <img src="/assets/logo/Helm.svg" alt="helm logo">
+                    </div>
+            </div>
+    </section>
+
+
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Docs</h4>
+                    <ul>
+                        <li><a href="#">Getting Started</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>Helmhub Community
+                        <li><a href="https://stackoverflow.com/users/31808849/helmhubio"><i class="fa-brands fa-stack-overflow"></i> Stack-overflow</i></a></li>
+                        <li><a href="https://x.com/helmhubio"><i class="fa fa-twitter"></i>   X(Formely Twitter)</i> </a></li>
+                        <li><a href="https://www.linkedin.com/company/helmhub-io"><i class="fa fa-linkedin-square" aria-hidden="true"> Linkedin</i></a></li>
+                        <li><a href="https://keybase.io/team/helmhub"><i class="fa-brands fa-keybase"></i> Keybase </a></li>
+                        <li><a href="mailto:helmhubio@gmail.com"><i class="fa-solid fa-envelope"></i> Mail us </i></a></li>
+                        <li><a href="https://helmhubio.github.io "><i class="fa fa-globe" aria-hidden="true"> Our Website</i></a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>More</h4>
+                    <ul>
+                        <li><a href="#">Blog <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+                        <li><a href="https://github.com/helmhub-io">GitHub <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>With Love From Naija...🇳🇬 </p>
+                <p>Copyright © 2025 Helmhub</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+            navigator.clipboard.writeText(text).then(function() {
+                
+                const button = element.nextElementSibling;
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                }, 2000);
+            });
+        }
+
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const themeIcon = document.getElementById('theme-icon');
+            
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.removeAttribute('data-theme');
+                themeIcon.className = 'fa fa-moon-o';
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                themeIcon.className = 'fa fa-sun-o';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            const themeIcon = document.getElementById('theme-icon');
+            
+            if (savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeIcon.className = 'fa fa-sun-o';
+            }
+        });
+    </script>
+</body>
+</html>
