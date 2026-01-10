@@ -16,13 +16,14 @@
         <div class="container">
             <div class="nav-container">
                 <div class="nav-left">
-                    <img src="/assets/logo/helm-white.png" alt="" class="logo">
-                    <a href="/index.html" class="logo">HelmHub.IO</a>
-                    <a href="/about.html" class="nav-link">About</a>
-                    <a href="https://helmhub-io.github.io/charts" class="nav-link">Charts</a>
-                    <a href="/docs.html" class="nav-link">Docs</a>
-                    <a href="/team.html" class="nav-link">Contributors</a>
-                    <a href="/blog.html" class="nav-link">Blog</a>
+                    <img src="assets/logo/helm-white.png" alt="" class="logo">
+                    <a href="index.html" class="logo">HelmHub.IO</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="charts.html" class="nav-link">Charts</a>
+                    <a href="docs.html" class="nav-link">Docs</a>
+
+                    <a href="team.html" class="nav-link">Contributors</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
                 </div>
                 <div class="nav-right">
                     <button class="theme-toggle" onclick="toggleTheme()">
@@ -38,7 +39,6 @@
                 </div>
                 <button class="hamburger" onclick="toggleMenu()">☰</button>
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="/index.html">Home</a></li>
                     <li><a href="/about.html" >About</a></li>
                     <li><a href="https://helmhub-io.github.io/charts" >Charts</a></li>
                     <li><a href="/docs.html" >Docs</a></li>
@@ -266,9 +266,12 @@
             
             if (savedTheme === 'dark') {
                 document.documentElement.setAttribute('data-theme', 'dark');
-                themeIcon.className = 'fa fa-sun-o';
+                if(themeIcon) themeIcon.className = 'fa fa-sun-o';
+            } else if(themeIcon) {
+                themeIcon.className = 'fa fa-moon-o';
             }
         });
     </script>
+    <script src="assets/js/search-redirect.js"></script>
 </body>
 </html>
